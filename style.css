@@ -1,0 +1,20 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(90deg, #ff0084, #00fff2);
+    color: white;
+}
+
+#container {
+    overflow: hidden;
+    width: 90%;
+}
+
+#name {
+    font-size: 3rem;
+    font-family: Arial, sans-serif;
+    color: white;
+}
