@@ -4,17 +4,28 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background: linear-gradient(90deg, #ff0084, #00fff2);
+    background: linear-gradient(90deg, #ff0084, #00ff00);
     color: white;
 }
 
-#container {
-    overflow: hidden;
+.supercontainer {
     width: 90%;
+    flex-direction: column-reverse;
 }
 
 #name {
     font-size: 3rem;
     font-family: Arial, sans-serif;
     color: white;
+}
+
+.conatiner2{
+    color: white;
+}
+
+.fotball{
+    margin-left: 800px;
+    width: 30%;
+    position: relative;
+    top: -150px; /* Flytt opp teksten med 50px */
 }
