@@ -27,5 +27,12 @@ body {
     margin-left: 800px;
     width: 30%;
     position: relative;
-    top: -150px; /* Flytt opp teksten med 50px */
+    top: -150px; 
+}
+
+.frisbeegolf{
+    margin-left: 800px;
+    width: 30%;
+    position: relative;
+    top: -50px; 
 }
