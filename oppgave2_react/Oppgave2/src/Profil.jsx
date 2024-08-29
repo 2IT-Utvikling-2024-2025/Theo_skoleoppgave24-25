@@ -43,21 +43,18 @@ export default function MineFerdigheter(){
 }
 
 function VoteButton() {
-    const [vote, setVote] = useState(0)
-    const [isVoted, setIsVoted] = useState(false)
+    const [hasVoted, setHasVoted] = useState(false)
 
     function handleClick() {
-        if (!isVoted) {
-            setVote(vote + 1)
-            setIsVoted(true)
-        }
+        setHasVoted(true)
     }
 
     return (
-        <button className='button' onClick={handleClick} disabled={isVoted}>
-            {isVoted ? `Voted` : `Vote`} {vote} {vote === 1 ? 'time' : 'times'}
+        <button className='button' onClick={handleClick} disabled={hasVoted}>
+            {hasVoted ? 'Voted' : 'Vote'}
         </button>
     )
 }
+
 
 
