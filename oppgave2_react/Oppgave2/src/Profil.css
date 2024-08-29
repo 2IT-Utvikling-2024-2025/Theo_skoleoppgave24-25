@@ -1,0 +1,17 @@
+Img{
+    height: 30svh;
+    width: 30svh;
+    border-radius: 50%;
+}
+
+p{
+    font-size: 12px;
+    width: 30svw;
+}
+
+h6{
+    font-size: medium;
+    padding: 0;
+    margin: 0%;
+    
+}
