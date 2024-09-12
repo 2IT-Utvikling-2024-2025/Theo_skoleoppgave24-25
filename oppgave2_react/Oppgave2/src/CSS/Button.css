@@ -1,0 +1,8 @@
+.buttonstyle{
+    color: aqua;
+    background-color: rgb(128, 2, 0);
+    height: 80svh;
+    width: 80svh;
+    border-radius: 50%;
+    font-size: xx-large;
+}

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import './MyHobbies.css'
+import '../CSS/MyHobbies.css'
 
 const hobbies = [
     {title: 'Fotball', isFavoritt: false, upVote: 0, id: 1},

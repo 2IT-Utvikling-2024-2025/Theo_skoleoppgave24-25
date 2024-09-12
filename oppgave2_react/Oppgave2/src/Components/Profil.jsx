@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import Bilde from './IMAGES/Bilde.webp'
-import './Profil.css'
+import Bilde from '../IMAGES/Bilde.webp'
+import '../CSS/Profil.css'
 
 
 const hobbies = [
@@ -27,9 +27,9 @@ export default function MineFerdigheter(){
             <h6>Programming Rizz</h6>
             <p>Programming Rizz er en av mine største ferdigheter. Min go to rizz line er: Er du css for du gjør livet mitt mye mer fargerikt</p>
             <h6>Fotball</h6>
-            <p>på fotbllbanen skinner jeg som en sol, løper rundt som en løve og skyter som steth curry. </p>
+            <p>På fotbllbanen skinner jeg som en sol, løper rundt som en løve og skyter som steth curry. </p>
             <h6>synge</h6>
-            <p>Jeg synger og synger hver dag og stemmen min er som masasje for ørene</p>
+            <p>Jeg synger og synger hver dag og stemmen min er som masasje for ørene. Favorittsangen min er fairytale!</p>
 
             <ul>{listItems}</ul>
 
