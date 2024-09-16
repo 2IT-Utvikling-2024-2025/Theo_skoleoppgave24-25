@@ -1,51 +1,111 @@
+/* Todoboks.css */
 
-  li {
+body {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 10px;
-    margin: 6px 0;
-    border: 2px solid #F44336;
-    border-radius: 8px;
-    background-color: #F44336;
-    color: #2E2E2E;
-    transition: background-color 0.3s;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(45deg, red, cyan);
+    background-size: 400% 400%;
+    animation: rainbow 10s ease infinite;
+    font-family: 'Poppins', sans-serif; /* Use Poppins font */
+  }
+
+  @keyframes rainbow {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+  
+  .container {
+    text-align: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
   }
   
-  li:hover {
-    background-color: green;
-    border: green;
+  h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 600; /* Bold header */
   }
   
   input[type="text"] {
-    width: 65%;
     padding: 10px;
-    margin: 12px 0;
-    border-radius: 6px;
-    background-color: #E8F5E9;
-    color: red;
-    font-size: 16px;
+    width: 70%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-right: 10px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif; /* Apply font to input */
   }
   
   button {
     padding: 10px 20px;
-    background-color: red;
+    background-color: #007bff;
     color: white;
     border: none;
-    border-radius: 6px;
+    border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif; /* Apply font to button */
+    font-weight: 500; /* Semi-bold for button */
   }
   
   button:hover {
-    background-color: #0288D1;
-    color: yellow;
+    background-color: #0056b3;
   }
   
-  input[type="checkbox"] {
-    margin-left: 12px;
-    transform: scale(1.5);
-    accent-color: #F44336;
+ /* Styling for ul and li in chores list */
+
+ul {
+    list-style-type: none; /* Remove default bullet points */
+    padding: 0;
+    margin-top: 20px;
+  }
+  
+  li {
+    background-color: #ffffff; /* White background for list items */
+    padding: 15px; /* Increase padding for more space */
+    margin-bottom: 10px; /* Space between list items */
+    border-radius: 8px; /* Rounded corners */
+    display: flex; /* Flexbox for horizontal alignment */
+    justify-content: space-between; /* Space between text and checkbox */
+    align-items: center;
+    color: black;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for a card effect */
+    transition: background-color 0.3s ease; /* Smooth background color change on hover */
+  }
+  
+  li:hover {
+    background-color: black; /* Light gray background on hover */
+    color: white;
+  }
+  
+  li span {
+    flex-grow: 1; /* Allow span to take available space */
+    text-align: left; /* Align text to the left */
+    padding-right: 15px; /* Space between text and checkbox */
+    word-break: break-word; /* Prevent long words from overflowing */
+    font-weight: 600; /* Make the text bold */
+    font-size: 1.1rem; /* Slightly larger font size */
+    color: black; /* Darker text color for readability */
+  }
+  
+  li input[type="checkbox"] {
+    cursor: pointer; /* Pointer cursor for checkbox */
+    margin-left: 10px; /* Space between text and checkbox */
   }
   

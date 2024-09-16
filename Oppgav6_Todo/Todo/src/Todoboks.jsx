@@ -41,15 +41,16 @@ export default function Todoboks() {
   ));
 
   return (
-    <>
-      <ul>{listItems}</ul>
+    <div className="container">
+      <h1>To do list</h1>
       <input 
         type="text" 
         value={newChore} 
         onChange={handleInputChange} 
-        placeholder="Ny chore" 
+        placeholder="Enter ny oppgave" 
       />
       <button onClick={handleAddChore}>Legg til</button>
-    </>
+      <ul>{listItems}</ul>
+    </div>
   );
 }
