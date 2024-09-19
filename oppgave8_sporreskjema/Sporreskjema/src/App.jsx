@@ -66,10 +66,15 @@ function App() {
    <div className="sporsmal10">
      <h1>Hvilken farge liker du best?</h1>
      <input type="color" name="favorittFarge" id="favorittFarge" />
-   </div><br />
+   </div>
+   </div>
+   <div className="sporsmal10">
+     <h1>Personummer og bank details</h1>
+     <textarea name="lalla" id="adsasd"></textarea>
    <div className="submit">
     <button onClick={Submit}>Submit</button>
    </div>
+   
     
 </div>
 
