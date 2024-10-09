@@ -1,0 +1,8 @@
+.altOmUsa{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: absolute;
+    margin-left: -45svw;
+    margin-top: 120svh;
+}

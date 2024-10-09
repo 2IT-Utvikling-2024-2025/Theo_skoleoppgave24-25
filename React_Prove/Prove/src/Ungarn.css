@@ -1,0 +1,17 @@
+.altOmUngarn{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: absolute;
+    margin-left: -45svw;
+}
+
+img{
+    height: 50svh;
+    width: 40svw;
+}
+
+h1{
+    margin: 0;
+    padding: 0;
+}
