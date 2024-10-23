@@ -15,7 +15,7 @@ function App() {
 
   return (
     <>
-      <B></B>
+      <G></G>
     </>
   )
 }
