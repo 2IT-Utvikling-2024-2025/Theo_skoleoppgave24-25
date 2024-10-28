@@ -86,3 +86,15 @@ button:focus-visible {
   min-width: 100px;
 }
 
+.klass-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 0;
+}
+
+.klass-item {
+  margin: 10px;
+}
+
+
