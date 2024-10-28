@@ -16,6 +16,7 @@ while running:
     if keys[pygame.K_RIGHT]: player.x += speed
     if keys[pygame.K_UP]: player.y -= speed
     if keys[pygame.K_DOWN]: player.y += speed
+    
     screen.fill((0, 0, 0))
     pygame.draw.rect(screen, color, player)
     pygame.display.flip()

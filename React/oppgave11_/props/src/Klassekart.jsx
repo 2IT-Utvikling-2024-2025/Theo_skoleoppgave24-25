@@ -21,7 +21,7 @@ export default function Klassekart() {
         <div>
             <ul>
                 {klass.map((klass) => (
-                    <li key={klass.id}>
+                    <li key={klass.id} >
                         <Props name={klass.name} />
                     </li>
                 ))}
