@@ -1,9 +1,11 @@
 import { useState } from "react";
 import Props from "./Props";
 
-const [nyElev,setNyElev] = "";
+
 
 export default function Klassekart() {
+
+    const [nyElev,setNyElev] = useState("");
   const [klass, setKlass] = useState([
     { id: 1, name: "Oliver" },
     { id: 2, name: "Justine" },
