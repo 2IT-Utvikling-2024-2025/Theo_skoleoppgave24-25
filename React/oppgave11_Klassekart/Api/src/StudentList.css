@@ -1,0 +1,13 @@
+.student-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Fem pulter i bredden */
+    gap: 10px; /* Avstand mellom pulter */
+    width: 80svw;
+}
+
+.student-desk {
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: center;
+    background-color: brown; /* Lysebrun farge */
+}
