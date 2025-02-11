@@ -1,0 +1,58 @@
+/* Container for hele appen */
+.container {
+  max-width: 800px; /* Sett en passende bredde for innholdet */
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Tittel-styling */
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Knappestyling */
+.search-button {
+  display: block;
+  margin: 0 auto; /* For å sentrere knappen */
+  padding: 10px 20px;
+  background-color: #007BFF; /* Du kan endre farge */
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.search-button:hover {
+  background-color: #0056b3; /* Mørkere nyanse ved hover */
+}
+
+/* Tabell-styling */
+.routes-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;    /* Litt avstand før hver tabell */
+  margin-bottom: 30px; /* Litt ekstra avstand mellom tabellene */
+}
+
+.routes-table th,
+.routes-table td {
+  border: 1px solid #ccc; 
+  padding: 10px;
+  text-align: left;
+}
+
+/* Headerraden i hver tabell */
+.routes-table thead tr:first-child th {
+  background-color: black;
+  font-size: 18px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.routes-table thead tr:nth-child(2) th {
+  background-color: black;
+  font-weight: normal;
+}

@@ -1,0 +1,114 @@
+/* Siden du kanskje allerede har en global styling med gradient, 
+   kan du enten fjerne denne body-stylingen, 
+   eller legge den her hvis dette er en egen side/komponent. */
+
+   html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  
+  body {
+    /* Eksempel på samme gradient som tidligere */
+    background: linear-gradient(135deg, #4f46e5, #9333ea);
+    font-family: Arial, sans-serif;
+    overflow: auto;
+  }
+  
+  /* Container som kapsler inn alt (skjema + tittel) */
+  .edit-route-container {
+    background-color: rgba(0, 0, 0, 0.5); 
+    border-radius: 12px;
+    max-width: 600px;
+    width: 90%;
+    margin: 30px auto;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    text-align: center;
+  }
+  
+  /* Tittel for "Edit Route" */
+  .edit-route-title {
+    color: #fff;
+    font-size: 36px;
+    margin-bottom: 30px;
+  }
+  
+  /* Selve skjemaet */
+  .edit-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  /* Enkelt label-stil */
+  .edit-form label {
+    align-self: flex-start;
+    margin-left: 10%;
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  /* Input-felt */
+  .edit-form input[type="text"] {
+    width: 80%;
+    max-width: 500px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    transition: 0.3s;
+  }
+  
+  .edit-form input[type="text"]:focus {
+    border-color: #a78bfa; 
+    box-shadow: 0 0 8px rgba(167,139,250, 0.7);
+  }
+  
+  /* Oppdater-knappen */
+  .edit-form button[type="submit"] {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: #4f46e5;
+    color: #fff;
+    transition: 0.3s;
+  }
+  
+  .edit-form button[type="submit"]:hover {
+    background-color: #3b34c0;
+    transform: scale(1.05);
+  }
+  
+  /* Meldingen som dukker opp etter vellykket oppdatering */
+  .success-message {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 0 0 4px rgba(0,0,0,0.5);
+  }
+  
+  /* Responsiv design (for mobil) */
+  @media (max-width: 600px) {
+    .edit-route-title {
+      font-size: 28px;
+    }
+    
+    .edit-form label {
+      margin-left: 0;
+    }
+    
+    .edit-form input[type="text"] {
+      width: 100%;
+    }
+  }
+  

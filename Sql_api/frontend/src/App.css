@@ -1,0 +1,157 @@
+/* Fjerner default-margin og gir en helside-bakgrunn */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* Bakgrunn: gradient i hel høyde. */
+body {
+  /* Du kan bytte fargene om du vil ha en annen gradient. */
+  background: linear-gradient(135deg, #4f46e5, #9333ea);
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Bruk overflow: auto hvis innholdet blir høyt. */
+  overflow: auto;
+}
+
+/* Kapsler inn alt admin-innhold i en semitransparent boks */
+.admin-container {
+  background-color: rgba(0, 0, 0, 0.5); /* Litt gjennomsiktig svart */
+  border-radius: 12px;
+  max-width: 600px;
+  width: 90%; /* Slik at det skalerer litt på mobil */
+  margin: 30px auto;
+  padding: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2); /* Litt dybde */
+  text-align: center;
+}
+
+/* Tittel-styling */
+.admin-title {
+  color: #fff;
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+/* Skjema for å legge til en ny rute */
+.route-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px; /* Litt luft mellom feltene */
+  margin-bottom: 30px;
+}
+
+/* Input-feltene */
+.input-box {
+  width: 100%;
+  max-width: 500px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  text-align: center;
+  /* Gjør bakgrunnen mørk og teksten lysere */
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+/* Fokuseffekt på input */
+.input-box:focus {
+  border-color: #a78bfa; /* Lys lillafarge */
+  box-shadow: 0 0 8px rgba(167,139,250, 0.7);
+}
+
+/* Gruppe for knapper i skjemaet */
+.button-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* Generell knappestil */
+.action-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+/* Knapp for å legge til rute */
+.add-button {
+  background: #4f46e5;
+  color: white;
+}
+
+.add-button:hover {
+  background: #3b34c0;
+  transform: scale(1.05);
+}
+
+/* Rutelisten */
+.route-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 500px;
+}
+
+/* Hvert listeelement i rutelisten */
+.route-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 12px 15px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Teksten om hver rute */
+.route-info {
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+/* Slett-knappen */
+.delete-button {
+  background: #e53e3e;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.delete-button:hover {
+  background: #c53030;
+  transform: scale(1.05);
+}
+
+/* Responsiv design */
+@media (max-width: 600px) {
+  .admin-title {
+    font-size: 28px;
+  }
+
+  .route-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .route-info {
+    margin-bottom: 10px;
+  }
+}

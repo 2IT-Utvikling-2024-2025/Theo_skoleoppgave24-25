@@ -1,0 +1,159 @@
+/* General Body and Background */
+body {
+  background: linear-gradient(135deg, #4f46e5, #9333ea);
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  margin: 0;
+  padding: 20px;
+  overflow: auto; /* Allow content to scroll when necessary */
+}
+
+/* Admin Container */
+.admin-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  margin-top: 30px;
+  text-align: center;
+}
+
+/* Title */
+.admin-title {
+  color: white;
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+/* Route List */
+ul {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+  max-width: 500px;
+}
+
+/* Individual Route Item */
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  color: white;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 12px 15px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Delete Button Styling */
+.delete-button {
+  background: #e53e3e;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.delete-button:hover {
+  background: #c53030;
+  transform: scale(1.05);
+}
+
+/* Form Styling */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 20px;
+}
+
+/* Input Box Styling */
+.input-box {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Input Box Focus Effect */
+.input-box:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 8px rgba(79, 70, 229, 0.5);
+}
+
+/* Button Group for Add and Update */
+.button-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* General Button Styling */
+.action-button {
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+/* Add Button */
+.add-button {
+  background: #4f46e5;
+  color: white;
+}
+
+.add-button:hover {
+  background: #3b34c0;
+  transform: scale(1.05);
+}
+
+/* Update Button */
+.update-button {
+  background: #38a169;
+  color: white;
+}
+
+.update-button:hover {
+  background: #2f855a;
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .admin-container {
+    padding: 0 10px;
+  }
+
+  .input-box {
+    width: 100%;
+  }
+
+  .button-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .action-button {
+    width: 100%;
+  }
+}
+  
