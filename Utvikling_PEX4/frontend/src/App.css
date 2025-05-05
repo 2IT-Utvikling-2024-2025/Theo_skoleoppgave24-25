@@ -1,0 +1,128 @@
+/* Reset og generelt */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+/* Container som omkranser hele appen */
+.container {
+  max-width: 900px;
+  margin: 3rem auto;
+  background: #fff;
+  border-radius: 8px;
+  padding: 2rem 2.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Overordnede titler */
+h1 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+h2 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #444;
+}
+
+/* Seksjonsinndeling */
+section {
+  margin-bottom: 2rem;
+}
+
+/* Produktliste */
+.product-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.product-card {
+  background: #fafafa;
+  border: 1px solid #ececec;
+  border-left: 5px solid #0077cc;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+  padding: 1rem 1.5rem;
+}
+
+.product-card-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+}
+
+.product-card-subtitle {
+  color: #666;
+  margin-bottom: 0.6rem;
+}
+
+.product-specs {
+  list-style: disc inside;
+  margin-top: 0.3rem;
+  padding-left: 1rem; /* litt innrykk */
+}
+
+/* Bestillingsskjema */
+.order-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px;
+}
+
+.order-form label {
+  font-weight: 600;
+}
+
+.order-form select,
+.order-form input {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.order-form button {
+  align-self: flex-start;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 4px;
+  background: #0077cc;
+  color: #fff;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.order-form button:hover {
+  background: #005fa3;
+}
+
+/* Ordretabell */
+.order-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.order-table th {
+  background: #f0f0f0;
+  padding: 0.6rem;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+
+.order-table td {
+  border-bottom: 1px solid #ccc;
+  padding: 0.6rem;
+}
