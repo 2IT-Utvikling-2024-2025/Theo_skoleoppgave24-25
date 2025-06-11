@@ -1,84 +1,127 @@
-import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+// src/pages/UserRegister.jsx
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function UserRegister() {
-  const [name, setName]             = useState('')
-  const [password, setPassword]     = useState('')
-  const [membership, setMembership] = useState('Basis')
-  const [error, setError]           = useState('')
-  const [loading, setLoading]       = useState(false)
-  const nav = useNavigate()
+  const nav = useNavigate();
+
+  // Skjema‐state
+  const [name, setName]             = useState('');
+  const [password, setPassword]     = useState('');
+  const [membershipType, setMembershipType] = useState('');
+  const [types, setTypes]           = useState([]);
+  const [error, setError]           = useState('');
+  const [loading, setLoading]       = useState(false);
+
+  // Hent alle medlemskapstyper fra backend
+  useEffect(() => {
+    fetch('/api/members/types')
+      .then(res => res.json())
+      .then(setTypes)
+      .catch(console.error);
+  }, []);
 
   const onSubmit = async e => {
-    e.preventDefault()
-    setError('')
-    setLoading(true)
+    e.preventDefault();
+    if (!membershipType) {
+      setError('Velg et medlemskap');
+      return;
+    }
+    setError('');
+    setLoading(true);
+
     const res = await fetch('/api/members', {
       method: 'POST',
-      headers: { 'Content-Type':'application/json' },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         name,
-        membership_type: membership,
-        password
+        password,
+        membership_type: membershipType   // sender tekst, ikke ID
       })
-    })
-    setLoading(false)
-    if (!res.ok) {
-      const err = await res.json().catch(() => ({}))
-      return setError(err.error || 'Kunne ikke registrere.')
+    });
+
+    setLoading(false);
+
+    if (res.status === 400) {
+      const body = await res.json().catch(() => ({}));
+      setError(body.error || 'Ugyldig medlemskapstype');
+      return;
     }
-    const user = await res.json()
-    localStorage.setItem('memberId', user.id)
-    nav('/user/dashboard')
-  }
+    if (!res.ok) {
+      setError('En intern feil oppstod.');
+      return;
+    }
+
+    const user = await res.json();
+    localStorage.setItem('memberId', user.id);
+    nav('/user/dashboard');
+  };
 
   return (
-    <div style={{ padding:20, maxWidth:400, margin:'auto' }}>
-      <h1>Registrer nytt medlem</h1>
-      {error && <div style={{ color:'crimson', marginBottom:10 }}>{error}</div>}
+    <div className="container">
+      <h1>Registrer deg som medlem</h1>
+      {error && <p style={{ color: 'crimson', marginBottom: '1rem' }}>{error}</p>}
       <form onSubmit={onSubmit}>
-        <div>
-          <label>Navn:<br/>
-            <input
-              type="text" value={name}
-              onChange={e => setName(e.target.value)}
-              required style={{ width:'100%' }}
-            />
-          </label>
-        </div>
-        <div style={{ marginTop:10 }}>
-          <label>Passord:<br/>
-            <input
-              type="password" value={password}
-              onChange={e => setPassword(e.target.value)}
-              required style={{ width:'100%' }}
-            />
-          </label>
-        </div>
-        <div style={{ marginTop:10 }}>
-          <label>Medlemskap:<br/>
-            <select
-              value={membership}
-              onChange={e => setMembership(e.target.value)}
-              style={{ width:'100%' }}
-            >
-              <option>Basis (299kr)</option>
-              <option>Premium (599kr)</option>
-            </select>
-          </label>
-        </div>
+        <label>
+          Navn:
+          <input
+            type="text"
+            value={name}
+            onChange={e => setName(e.target.value)}
+            required
+          />
+        </label>
+
+        <label>
+          Passord:
+          <input
+            type="password"
+            value={password}
+            onChange={e => setPassword(e.target.value)}
+            required
+          />
+        </label>
+
+        <label>
+          Medlemskap:
+          <select
+            value={membershipType}
+            onChange={e => setMembershipType(e.target.value)}
+            required
+          >
+            <option value="">Velg medlemskap…</option>
+            {types.map(t => (
+              <option key={t.id} value={t.membership_type}>
+                {t.membership_type} ({t.price} kr)
+              </option>
+            ))}
+          </select>
+        </label>
+
         <button
           type="submit"
           disabled={loading}
-          style={{ marginTop:20, width:'100%' }}
+          style={{ marginTop: '1rem', width: '100%' }}
         >
           {loading ? 'Registrerer…' : 'Registrer'}
         </button>
       </form>
-      <p style={{ textAlign:'center', marginTop:15 }}>
-        Har allerede konto?{' '}
-        <button onClick={() => nav('/user/login')}>Logg inn</button>
+
+      <p style={{ marginTop: '1rem', textAlign: 'center' }}>
+        Allerede medlem?{' '}
+        <button
+          onClick={() => nav('/user/login')}
+          style={{
+            background: 'transparent',
+            border: 'none',
+            color: '#007bff',
+            textDecoration: 'underline',
+            cursor: 'pointer'
+          }}
+        >
+          Logg inn
+        </button>
       </p>
     </div>
-  )
+  );
 }
